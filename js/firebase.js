@@ -85,8 +85,22 @@ window.addEventListener('load', function () {
   $('#js-send-location-3').click(function (){
     console.log(`sending location 2.`);
     locationRef.set(location3);    
-  });
-
-
-  
+  }); 
+ 
 }, false);
+
+
+let map, marker;
+const center = { lat: 37.29338200566287, lng: 127.20284284779422 }
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 37.29338200566287, lng: 127.20284284779422 },
+    zoom: 16,
+  });
+  
+  marker = new google.maps.Marker({
+    position: center,
+    map: map,
+  });
+}
