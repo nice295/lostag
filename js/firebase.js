@@ -34,22 +34,22 @@ window.addEventListener('load', function () {
   //판다월드 - 37.293436016625634, 127.20274316522656
   var location1 = {
     // name: '유러피안어드벤처',
-    longitude: '37.29140467051707',
-    latitude: '127.20018947041493',
+    latitude: 37.29140467051707,
+    longitude: 127.20018947041493,
     mac: 'aa:bb:cc:dd:ee:ff'
   };
   
   var location2 = {
     // name: '로스트밸리',
-    longitude: '37.29193336025852',
-    latitude: '127.20782870376418',
+    latitude: 37.29193336025852,
+    longitude: 127.20782870376418,
     mac: 'aa:bb:cc:dd:ee:ff'
   };
   
   var location3 = {
     // name: '판다월드',
-    longitude: '37.293436016625634',
-    latitude: '127.20274316522656',
+    latitude: 37.293436016625634,
+    longitude: 127.20274316522656,
     mac: 'aa:bb:cc:dd:ee:ff'
   };
   
@@ -90,17 +90,3 @@ window.addEventListener('load', function () {
 }, false);
 
 
-let map, marker;
-const center = { lat: 37.29338200566287, lng: 127.20284284779422 }
-
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 37.29338200566287, lng: 127.20284284779422 },
-    zoom: 16,
-  });
-  
-  marker = new google.maps.Marker({
-    position: center,
-    map: map,
-  });
-}

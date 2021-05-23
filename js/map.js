@@ -1,19 +1,31 @@
-(function($) {
-  "use strict"; // Start of use strict
+let map, marker;
+const center = { lat: 37.29338200566287, lng: 127.20284284779422 }
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 37.29338200566287, lng: 127.20284284779422 },
+    zoom: 16,
+  });
+  
+  // marker = new google.maps.Marker({
+  //   position: center,
+  //   map: map,
+  // });
+}
+
+// Bindings on load.
+window.addEventListener('load', function () {
  
-  var initMap = function() {
-    // The location of Uluru
-    const uluru = { lat: -25.344, lng: 131.036 };
-    // The map, centered at Uluru
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 4,
-      center: uluru,
-    });
-    // The marker, positioned at Uluru
-    const marker = new google.maps.Marker({
-      position: uluru,
+  var locationRef = firebase.database().ref('location');
+  locationRef.on('value', function (snapshot) {
+    console.log(`location value is ${snapshot.val().longitude}`);
+    
+    let newMaker = { lat: snapshot.val().latitude, lng: snapshot.val().longitude }
+    marker = new google.maps.Marker({
+      position: newMaker,
       map: map,
     });
-  }
-  
-})(jQuery); // End of use strict
+  });
+
+}, false);
+
