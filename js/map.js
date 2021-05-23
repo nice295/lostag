@@ -30,6 +30,7 @@ window.addEventListener('load', function () {
       map: map,
     });
     
+    // map.setCenter(marker.getPosition());
     
   });
 

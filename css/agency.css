@@ -42,7 +42,8 @@ h6 {
 }
 
 section {
-  padding: 100px 0;
+/*   padding: 100px 0; */
+  padding: 20px 0; 
 }
 
 section h2.section-heading {
