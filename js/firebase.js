@@ -3,68 +3,53 @@
 // Bindings on load.
 window.addEventListener('load', function () {
 
-//   var locationRef = firebase.database().ref('location');
+//   var fanRunRef = firebase.database().ref('fan/run');
 //   fanRunRef.on('value', function (snapshot) {
 //     console.log(`run value is ${snapshot.val()}`);
 
-//     $('#js-send-location-1').removeClass('btn-danger btn-secondary');
-//     $('#js-send-location-2').removeClass('btn-danger btn-secondary');
+//     $('#js-move-run').removeClass('btn-danger btn-secondary');
+//     $('#js-move-stop').removeClass('btn-danger btn-secondary');
     
 //     if (snapshot.val() == true) {
-//       $('#js-send-location-1').addClass('btn-danger');
+//       $('#js-move-run').addClass('btn-danger');
 //     }
 //     else {
-//       $('#js-send-location-1').addClass('btn-danger');
+//       $('#js-move-stop').addClass('btn-danger');
 //     }
 //   });
-  
-  var fanRunRef = firebase.database().ref('fan/run');
-  fanRunRef.on('value', function (snapshot) {
-    console.log(`run value is ${snapshot.val()}`);
 
-    $('#js-move-run').removeClass('btn-danger btn-secondary');
-    $('#js-move-stop').removeClass('btn-danger btn-secondary');
-    
-    if (snapshot.val() == true) {
-      $('#js-move-run').addClass('btn-danger');
-    }
-    else {
-      $('#js-move-stop').addClass('btn-danger');
-    }
-  });
+//   $('#js-move-run').click(function (){
+//     console.log(`js-move-run clicked`);
+//     fanRunRef.set(true);
+//   });
 
-  $('#js-move-run').click(function (){
-    console.log(`js-move-run clicked`);
-    fanRunRef.set(true);
-  });
+//   $('#js-move-stop').click(function (){
+//     console.log(`js-move-stop clicked`);
+//     fanRunRef.set(false);
+//   });
 
-  $('#js-move-stop').click(function (){
-    console.log(`js-move-stop clicked`);
-    fanRunRef.set(false);
-  });
+//   var fanSongRef = firebase.database().ref('fan/song');
+//   fanSongRef.on('value', function (snapshot) {
+//     console.log(`song value is ${snapshot.val()}`);
 
-  var fanSongRef = firebase.database().ref('fan/song');
-  fanSongRef.on('value', function (snapshot) {
-    console.log(`song value is ${snapshot.val()}`);
+//     $('#js-song-play').removeClass('btn-danger btn-secondary');
+//     $('#js-song-stop').removeClass('btn-danger btn-secondary');
 
-    $('#js-song-play').removeClass('btn-danger btn-secondary');
-    $('#js-song-stop').removeClass('btn-danger btn-secondary');
+//     if (snapshot.val() == true) {
+//       $('#js-song-play').addClass('btn-danger');
+//     }
+//     else {
+//       $('#js-song-stop').addClass('btn-danger');
+//     }
+//   });
 
-    if (snapshot.val() == true) {
-      $('#js-song-play').addClass('btn-danger');
-    }
-    else {
-      $('#js-song-stop').addClass('btn-danger');
-    }
-  });
+//   $('#js-song-play').click(function (){
+//     fanSongRef.set(true);
+//   });
 
-  $('#js-song-play').click(function (){
-    fanSongRef.set(true);
-  });
-
-  $('#js-song-stop').click(function (){
-    fanSongRef.set(false);
-  });
+//   $('#js-song-stop').click(function (){
+//     fanSongRef.set(false);
+//   });
 
   var fanGreetingRef = firebase.database().ref('fan/greeting');
   fanGreetingRef.on('value', function (snapshot) {
@@ -97,5 +82,43 @@ window.addEventListener('load', function () {
   $('#js-greeting-off').click(function (){
     fanGreetingRef.set("off");
   });
+  
+  
+  var locationRef = firebase.database().ref('Location');
+  locationRef.on('value', function (snapshot) {
+    console.log(`location value is ${snapshot.val()}`);
+
+    $('#js-send-location-1').removeClass('btn-danger btn-secondary');
+    $('#js-send-location-2').removeClass('btn-danger btn-secondary');
+    $('#js-send-location-2').removeClass('btn-danger btn-secondary');
+
+    if (snapshot.val() == 'hello') {
+      $('#js-greeting-hello').addClass('btn-danger');
+
+    }
+    else if (snapshot.val() == 'bye') {
+      $('#js-greeting-bye').addClass('btn-danger');
+    }
+    else if (snapshot.val() == 'off') {
+      $('#js-greeting-off').addClass('btn-danger');
+    }
+  });
+
+  $('#js-send-location-1').click(function (){
+    console.log(`sending location value is ${snapshot.val()}`);
+    locationRef.set({
+      mac: "aa:bb:cc:dd:ee:ff",
+      longitude: "37.293910792616444",
+      latitude: "127.20256666359879"
+    });    
+  });
+
+//   $('#js-greeting-bye').click(function (){
+//     fanGreetingRef.set("bye");
+//   });
+
+//   $('#js-greeting-off').click(function (){
+//     fanGreetingRef.set("off");
+//   });
 
 }, false);
