@@ -97,6 +97,27 @@
     </div>
   </header>
 
+    <!-- Services -->
+  <section id="map">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Map</h2>
+        </div>
+      </div>
+
+      <div class="row pb-4">
+        <div id="map"></div>
+        <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>   
+      </div>
+      
+    </div>
+  </section>
+  
   <!-- Services -->
   <section class="bg-light" id="control">
     <div class="container">
