@@ -39,7 +39,7 @@ window.addEventListener('load', function () {
     mac: 'aa:bb:cc:dd:ee:ff'
   };
   
-  var location3 = {
+  var location2 = {
     // name: '로스트밸리',
     longitude: '37.29193336025852',
     latitude: '127.20782870376418',
@@ -74,29 +74,17 @@ window.addEventListener('load', function () {
 
   $('#js-send-location-1').click(function (){
     console.log(`sending location 1.`);
-    locationRef.set({
-      mac: "aa:bb:cc:dd:ee:ff",
-      longitude: "37.293910792616444",
-      latitude: "127.20256666359879"
-    });    
+    locationRef.set(location1);    
   });
 
-    $('#js-send-location-2').click(function (){
+  $('#js-send-location-2').click(function (){
     console.log(`sending location 2.`);
-    locationRef.set({
-      mac: "aa:bb:cc:dd:ee:ff",
-      longitude: "37.291315742613484",
-      latitude: "127.20249388047245"
-    });    
+    locationRef.set(location2);    
   });
   
-    $('#js-send-location-3').click(function (){
-    console.log(`sending location 3.`);
-    locationRef.set({
-      mac: "aa:bb:cc:dd:ee:ff",
-      longitude: "37.2916881010234",
-      latitude: "127.20780685561947"
-    });    
+  $('#js-send-location-3').click(function (){
+    console.log(`sending location 2.`);
+    locationRef.set(location3);    
   });
 
 }, false);
