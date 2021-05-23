@@ -3,6 +3,21 @@
 // Bindings on load.
 window.addEventListener('load', function () {
 
+//   var locationRef = firebase.database().ref('location');
+//   fanRunRef.on('value', function (snapshot) {
+//     console.log(`run value is ${snapshot.val()}`);
+
+//     $('#js-send-location-1').removeClass('btn-danger btn-secondary');
+//     $('#js-send-location-2').removeClass('btn-danger btn-secondary');
+    
+//     if (snapshot.val() == true) {
+//       $('#js-send-location-1').addClass('btn-danger');
+//     }
+//     else {
+//       $('#js-send-location-1').addClass('btn-danger');
+//     }
+//   });
+  
   var fanRunRef = firebase.database().ref('fan/run');
   fanRunRef.on('value', function (snapshot) {
     console.log(`run value is ${snapshot.val()}`);

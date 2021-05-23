@@ -43,12 +43,20 @@
   <script>
     // Initialize Firebase
     var config = {
-      apiKey: "AIzaSyDbqNnovGsDYUFtoPPRst55N75Qbh_KmbY",
-      authDomain: "cat-loyvdq.firebaseapp.com",
-      databaseURL: "https://cat-loyvdq.firebaseio.com",
-      projectId: "cat-loyvdq",
-      storageBucket: "cat-loyvdq.appspot.com",
-      messagingSenderId: "852782283835"
+      // apiKey: "AIzaSyDbqNnovGsDYUFtoPPRst55N75Qbh_KmbY",
+      // authDomain: "cat-loyvdq.firebaseapp.com",
+      // databaseURL: "https://cat-loyvdq.firebaseio.com",
+      // projectId: "cat-loyvdq",
+      // storageBucket: "cat-loyvdq.appspot.com",
+      // messagingSenderId: "852782283835"
+      apiKey: "AIzaSyBEvDOks4bxG5eBoNHVttkhG4PewsrMVBs",
+      authDomain: "lost-smart-teg.firebaseapp.com",
+      databaseURL: "https://lost-smart-teg-default-rtdb.firebaseio.com",
+      projectId: "lost-smart-teg",
+      storageBucket: "lost-smart-teg.appspot.com",
+      messagingSenderId: "174840217",
+      appId: "1:174840217:web:c12bb176ab1f5841f21b08",
+      measurementId: "G-ZC84SBPEH1"
     };
     firebase.initializeApp(config);
   </script>
@@ -101,6 +109,19 @@
 
       <div class="row pb-4">
         <div class="col-4 text-right">
+          <h4 class="">Send location</h4>
+        </div>
+        <div class="col-8 text-left">
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button id="js-send-location-1" type="button" class="btn">1</button>
+            <button id="js-send-location-2" type="button" class="btn">2</button>
+            <button id="js-send-location-3" type="button" class="btn">3</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row pb-4">
+        <div class="col-4 text-right">
           <h4 class="">움직이기</h4>
         </div>
         <div class="col-8 text-left">
@@ -136,6 +157,7 @@
           </div>
         </div>
       </div>
+      
     </div>
   </section>
 
