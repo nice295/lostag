@@ -21,10 +21,16 @@ window.addEventListener('load', function () {
     console.log(`location value is ${snapshot.val().longitude}`);
     
     let newMaker = { lat: snapshot.val().latitude, lng: snapshot.val().longitude }
+
+    if (marker != null)
+      marker.setMap(null);
+    
     marker = new google.maps.Marker({
       position: newMaker,
       map: map,
     });
+    
+    
   });
 
 }, false);
