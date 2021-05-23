@@ -39,6 +39,18 @@
     gtag('config', 'UA-51117181-8');
   </script> -->
 
+<!--   <script src="js/map.js"></script> -->
+    <script>
+      let map;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: -34.397, lng: 150.644 },
+          zoom: 8,
+        });
+      }
+    </script>
+  
   <script src="https://www.gstatic.com/firebasejs/5.5.4/firebase.js"></script>
   <script>
     // Initialize Firebase
@@ -64,7 +76,7 @@
 </head>
 
 <body id="page-top">
-
+ 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
@@ -107,12 +119,11 @@
       </div>
 
       <div class="row pb-4">
-        <div id="map"></div>
-          <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-        <script
+      <div id="map"></div>
+         <script
           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo7wUI1bIlT2rvSFzbhUebLbXYBMWmIBc&callback=initMap&libraries=&v=weekly"
           async
-        ></script>   
+        ></script>  
       </div>
       
     </div>
@@ -240,7 +251,7 @@
   <script src="js/agency.js "></script>
   <!--<script src="js/my.js "></script>-->
   <script src="js/firebase.js "></script>
-  <script src="js/map.js"></script>
+
 
 </body>
 
