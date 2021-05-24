@@ -194,7 +194,8 @@ img::-moz-selection {
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url("../img/header-bg.jpg");
+/*   background-image: url("../img/header-bg.jpg"); */
+    background-image: url("https://cdn.glitch.com/37d9e42b-5b4d-4b17-9e77-c177a73cd5ec%2Fheader-bg.jpeg?v=1621812957809");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
