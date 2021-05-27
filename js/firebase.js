@@ -34,40 +34,40 @@ window.addEventListener('load', function () {
   //판다월드 - 37.293436016625634, 127.20274316522656
   var location1 = {
     // name: '유러피안어드벤처',
-    latitude: 37.29140467051707,
-    longitude: 127.20018947041493,
+    lat: 37.29140467051707,
+    lng: 127.20018947041493,
     mac: 'aa:bb:cc:dd:ee:ff'
   };
   
   var location2 = {
     // name: '로스트밸리',
-    latitude: 37.29193336025852,
-    longitude: 127.20782870376418,
+    lat: 37.29193336025852,
+    lng: 127.20782870376418,
     mac: 'aa:bb:cc:dd:ee:ff'
   };
   
   var location3 = {
     // name: '판다월드',
-    latitude: 37.293436016625634,
-    longitude: 127.20274316522656,
+    lat: 37.293436016625634,
+    lng: 127.20274316522656,
     mac: 'aa:bb:cc:dd:ee:ff'
   };
   
   var locationRef = firebase.database().ref('location');
   locationRef.on('value', function (snapshot) {
-    console.log(`location value is ${snapshot.val().longitude}`);
+    console.log(`location value is ${snapshot.val().lng}`);
 
     $('#js-send-location-1').removeClass('btn-danger btn-secondary');
     $('#js-send-location-2').removeClass('btn-danger btn-secondary');
     $('#js-send-location-3').removeClass('btn-danger btn-secondary');
 
-    if (snapshot.val().longitude == location1.longitude) {
+    if (snapshot.val().lng == location1.lng) {
       $('#js-send-location-1').addClass('btn-danger');
     }
-    else if (snapshot.val().longitude == location2.longitude) {
+    else if (snapshot.val().lng == location2.lng) {
       $('#js-send-location-2').addClass('btn-danger');
     }
-    else if (snapshot.val().longitude == location3.longitude) {
+    else if (snapshot.val().lng == location3.lng) {
       $('#js-send-location-3').addClass('btn-danger');
     }
   });

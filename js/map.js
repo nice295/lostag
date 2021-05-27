@@ -1,10 +1,45 @@
 let map, marker;
 const center = { lat: 37.29338200566287, lng: 127.20284284779422 }
+let lastLocation = { lat: 37.29338200566287, lng: 127.20284284779422 }
+var data = {sender: null, timestamp: null, lat: null, lng: null};
+
+function addToFirebase(data) {
+  data.timestamp = firebase.database.ServerValue.TIMESTAMP;
+  var ref = firebase.database().ref('locations').push(data, function(err) {
+    if (err) {  // Data was not written to firebase.
+      console.warn(err);
+    }
+  });
+}
+
+function updateLastlocation(data) {
+  data.timestamp = null;
+  var locationRef = firebase.database().ref('location');
+  locationRef.update(data);
+}
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 37.29338200566287, lng: 127.20284284779422 },
     zoom: 15,
+    styles: [{
+      featureType: 'poi',
+      stylers: [{ visibility: 'off' }]  // Turn off POI.
+    },
+    {
+      featureType: 'transit.station',
+      stylers: [{ visibility: 'off' }]  // Turn off bus, train stations etc.
+    }],
+    disableDoubleClickZoom: true,
+    streetViewControl: false,
+  });
+  
+  map.addListener('click', function(e) {
+    console.log(`Lat is ${e.latLng.lat()} and Lng is ${e.latLng.lng()}`);
+    data.lat = e.latLng.lat();
+    data.lng = e.latLng.lng();
+    addToFirebase(data);
+    updateLastlocation(data);
   });
   
   // marker = new google.maps.Marker({
@@ -16,11 +51,14 @@ function initMap() {
 // Bindings on load.
 window.addEventListener('load', function () {
  
+  const image =
+    "https://cdn.glitch.com/37d9e42b-5b4d-4b17-9e77-c177a73cd5ec%2Fdasol.png?v=1621847826305";
+  
   var locationRef = firebase.database().ref('location');
   locationRef.on('value', function (snapshot) {
-    console.log(`location value is ${snapshot.val().longitude}`);
+    console.log(`location value is ${snapshot.val().lng}`);
     
-    let newMaker = { lat: snapshot.val().latitude, lng: snapshot.val().longitude }
+    let newMaker = { lat: snapshot.val().lat, lng: snapshot.val().lng }
 
     if (marker != null)
       marker.setMap(null);
@@ -28,7 +66,10 @@ window.addEventListener('load', function () {
     marker = new google.maps.Marker({
       position: newMaker,
       map: map,
+      icon: image,
     });
+    
+    // marker.setMap(map);
     
     // map.setCenter(marker.getPosition());
     
