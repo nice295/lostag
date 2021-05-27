@@ -5,7 +5,8 @@
  */
 body {
   overflow-x: hidden;
-  font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/*   font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 p {
@@ -30,8 +31,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 700;
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+/*   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
 }
 
 #map {
@@ -42,22 +43,24 @@ h6 {
 }
 
 section {
-  padding: 100px 0;  
+  padding: 100px 0; 
+  font-weight: 700;
 }
 
 section h2.section-heading {
   font-size: 40px;
+  font-weight: 700;
   margin-top: 0;
   margin-bottom: 15px;
 }
 
-section h3.section-subheading {
+section h3.section-subheading {  
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 700;
   font-style: italic;
   margin-bottom: 75px;
   text-transform: none;
-  font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/*   font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
 }
 
 /* khlee */
@@ -69,10 +72,9 @@ section h3.section-subheading {
 
 section h3.section-subheading-nobottommargin {
   font-size: 16px;
-  font-weight: 400;
   font-style: italic;
   text-transform: none;
-  font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/*   font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
 }
 
 @media (min-width: 768px) {
@@ -82,7 +84,7 @@ section h3.section-subheading-nobottommargin {
 }
 
 .btn {
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/*   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
   font-weight: 700;
 }
 
@@ -136,12 +138,13 @@ img::-moz-selection {
   color: white;
   border: 0;
   background-color: #dc3545;
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/*   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
 }
 
 #mainNav .navbar-brand {
   color: #dc3545;
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, cursive;
+  font-weight: 700;
+/*   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, cursive; */
 }
 
 #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
@@ -154,7 +157,7 @@ img::-moz-selection {
   padding: 0.75em 0;
   letter-spacing: 1px;
   color: white;
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/*   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
 }
 
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
@@ -215,7 +218,7 @@ header.masthead .intro-text .intro-lead-in {
   font-style: italic;
   line-height: 22px;
   margin-bottom: 25px;
-  font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/*   font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
 }
 
 header.masthead .intro-text .intro-heading {
@@ -223,16 +226,16 @@ header.masthead .intro-text .intro-heading {
   font-weight: 700;
   line-height: 50px;
   margin-bottom: 25px;
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/*   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
 }
 
 /* khlee */
 header.masthead .intro-text .intro-heading-kr {
   font-size: 50px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 50px;
   margin-bottom: 25px;
-  font-family: 'Do Hyeon', sans-serif;
+/*   font-family: 'Do Hyeon', sans-serif;   */
 }
 
 @media (min-width: 768px) {
@@ -245,14 +248,14 @@ header.masthead .intro-text .intro-heading-kr {
     font-style: italic;
     line-height: 40px;
     margin-bottom: 25px;
-    font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/*     font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
   }
   header.masthead .intro-text .intro-heading {
     font-size: 75px;
     font-weight: 700;
     line-height: 75px;
     margin-bottom: 50px;
-    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/*     font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
   }
 }
 
@@ -326,7 +329,7 @@ header.masthead .intro-text .intro-heading-kr {
   font-size: 16px;
   font-style: italic;
   margin: 0;
-  font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/*   font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
 }
 
 #portfolio * {
@@ -366,7 +369,7 @@ header.masthead .intro-text .intro-heading-kr {
   font-size: 16px;
   font-style: italic;
   margin: 20px 0 30px;
-  font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/*   font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
 }
 
 .portfolio-modal .modal-content ul.list-inline {
@@ -678,13 +681,13 @@ section#contact ::-moz-placeholder {
   font-weight: 700;
   color: #ced4da;
   /* Firefox 19+ */
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/*   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
 }
 
 section#contact :-ms-input-placeholder {
   font-weight: 700;
   color: #ced4da;
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/*   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
 }
 
 footer {
@@ -696,7 +699,7 @@ footer span.copyright {
   font-size: 90%;
   line-height: 40px;
   text-transform: none;
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/*   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
 }
 
 footer ul.quicklinks {
@@ -704,7 +707,7 @@ footer ul.quicklinks {
   line-height: 40px;
   margin-bottom: 0;
   text-transform: none;
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+/*   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif; */
 }
 
 ul.social-buttons {
