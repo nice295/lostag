@@ -1,4 +1,4 @@
-let map, marker;
+let map, marker, markers;
 const center = { lat: 37.29338200566287, lng: 127.20284284779422 }
 let lastLocation = { lat: 37.29338200566287, lng: 127.20284284779422 }
 var data = {sender: null, timestamp: null, lat: null, lng: null};
@@ -17,6 +17,7 @@ function updateLastlocation(data) {
   var locationRef = firebase.database().ref('location');
   locationRef.update(data);
 }
+
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
@@ -71,9 +72,29 @@ window.addEventListener('load', function () {
     
     // marker.setMap(map);
     
-    // map.setCenter(marker.getPosition());
+    map.setCenter(marker.getPosition());
     
   });
+  
+  
+  var locationsRef = firebase.database().ref('locations');
+  locationsRef.once('value', (snapshot) => {
+  snapshot.forEach((childSnapshot) => {
+    var childKey = childSnapshot.key;
+    var childData = childSnapshot.val();   
+    
+    console.log(`Location at ${childData.lng} and ${childData.lat}`);
+    
+    let newMaker = { lat: childSnapshot.val().lat, lng: childSnapshot.val().lng }
+
+    markers = new google.maps.Marker({
+      position: newMaker,
+      map: map
+    });
+    
+    // markers.setMap(null);
+   
+  });
+});
 
 }, false);
-
